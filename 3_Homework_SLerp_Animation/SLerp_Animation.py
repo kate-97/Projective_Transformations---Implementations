@@ -21,7 +21,7 @@ def graphic_animation(e2b,e2e,tm):
 
     pygame.display.set_mode(display, DOUBLEBUF | OPENGL)
     glMatrixMode(GL_PROJECTION)
-    gluPerspective(120,1.0,1,11)
+    gluPerspective(120,1.0,1,14)
 
     verts = None
     faces = None
@@ -64,6 +64,8 @@ def graphic_animation(e2b,e2e,tm):
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
 
             glClearColor(179/255, 218/255, 255/255, 0)
+            draw_mesh(min_z = -6.5, max_z = 7)
+            draw_global_cartesian()
 
             glPushMatrix()
             glLineWidth(20)
